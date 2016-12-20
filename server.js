@@ -11,10 +11,6 @@ app.get("/favicon.ico", function(req, res) {
     res.send("");
 });
 
-app.get("/|/about", function(req, res) {
-    res.render('index', { title: 'Hey', message: 'Hello there!'});
-});
-
 app.group("/test", (router) => {
    router.get('/', function(req, res) {
         res.send("lalala");   
@@ -51,6 +47,27 @@ app.group("/timestamp", (router) => {
     router.get('/', function (req, res) {
         res.send('Usage: /<em>timestamp</em> or /<em>natural date, e.g. January 15, 2016</em>. Replace spaces with \%20! <strong>The timestamp should be in ms!</strong>');
     });
+});
+
+app.group("/request", (router) => {
+    router.get('/', function (req, res) {
+        //console.log(req.headers);
+        var os = req.headers['user-agent'];
+        os = os.replace(/^.*\((.+)\).*$/, "$1");
+        var ret = {
+            ip: req.headers['x-forwarded-for'],
+            os: os,
+            language: req.headers['accept-language'].split(";")[0].split(",")[0],
+        };
+        res.send(ret);
+    });
+});
+
+
+
+// Default
+app.get("/|/about", function(req, res) {
+    res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
 app.listen(8080, function () {
