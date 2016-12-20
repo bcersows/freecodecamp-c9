@@ -7,3 +7,9 @@ Usage: /<em>timestamp</em> or /<em>natural date, e.g. January 15, 2016</em>. Rep
 
 ## Request Header Parser
 Path `/request`: Outputs some user system information.
+
+## Request Header Parser
+Path `/shorturl`: Gets a user-provided URL and creates a shortlink for it. Redirects when opening that shortened URL.
+
+
+** Due to the incompatilities of Cloud9, all services have to be in one GitHub repository. Sorry 'bout that! **
