@@ -11,6 +11,7 @@
   "repository": "https://github.com/bcersows/freecodecamp-c9",
   "dependencies": {
     "express": "^4.14.0",
-    "express-group-routes": "^1.1.0"
+    "express-group-routes": "^1.1.0",
+    "pug": "^2.0.0-beta6"
   }
 }
