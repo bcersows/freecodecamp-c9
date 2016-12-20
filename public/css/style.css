@@ -1,0 +1,13 @@
+body {
+    background-color: #bc3435;
+}
+h1 {
+    color: #bc3435;
+}
+main {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    min-width: 600px;
+}

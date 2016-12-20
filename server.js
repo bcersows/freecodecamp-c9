@@ -4,6 +4,7 @@ require('./node_modules/pug');
 var app = express();
 
 app.set('view engine', 'pug');
+app.use(express.static('public'));
 
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
@@ -49,7 +50,7 @@ app.group("/timestamp", (router) => {
     });
 });
 
-app.group("/request", (router) => {
+app.group("/whoami", (router) => {
     router.get('/', function (req, res) {
         //console.log(req.headers);
         var os = req.headers['user-agent'];
@@ -60,6 +61,12 @@ app.group("/request", (router) => {
             language: req.headers['accept-language'].split(";")[0].split(",")[0],
         };
         res.send(ret);
+    });
+});
+
+app.group("/shorturl", (router) => {
+    router.get('/', function (req, res) {
+        res.render('shorturl', {base: req.baseUrl});
     });
 });
 
