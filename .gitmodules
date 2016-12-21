@@ -1,0 +1,6 @@
+[submodule "timestamp"]
+	path = timestamp
+	url = ssh://git@github.com/bcersows/freecodecamp-timestamp
+[submodule "whoami"]
+	path = whoami
+	url = ssh://git@github.com/bcersows/freecodecamp-whoami
