@@ -57,6 +57,7 @@ router.get('/r/:id', function (req, res) {
         loadUrl(db, null, id, function(urls) {
             if ( urls.length>0 ) {
                 var url = urls[0];
+                res.redirect(url);
             } else {
                 res.send({err: "Invalid ID!"});
             }
