@@ -21,6 +21,6 @@ app.get("/|/about", function(req, res) {
     res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
-app.listen(8080, function () {
+app.listen(process.env.PORT || 8080, function () {
     console.log('Example app listening on port 8080!')
 })
