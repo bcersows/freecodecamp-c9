@@ -5,13 +5,14 @@ var dbUrl = 'mongodb://localhost:27017/urls';
 var collectionName = "test";
 var mongo = require('mongodb').MongoClient
 
-function loadUrl(db, url, callback) {
+function loadUrl(db, url, id, callback) {
     var collection = db.collection(collectionName)
-      collection.find({
-        url: url
-      }).toArray(function(err, urls) {
-        if (err) throw err
-        callback(urls);
+        var find = {};
+        if ( url ) { find.url = url; }
+        if ( id ) { find._id = id; }
+        collection.find(find).toArray(function(err, urls) {
+            if (err) throw err
+            callback(urls);
     })
 }
 
@@ -19,7 +20,7 @@ router.get('/new/:url', function (req, res) {
     var url = req.params.url;
     mongo.connect(dbUrl, function(err, db) {
         if (err) throw err
-        loadUrl(db, url, function(urls) {
+        loadUrl(db, url, null, function(urls) {
             var obj = {
                 url: url
             };
@@ -44,15 +45,32 @@ router.get('/get', function (req, res) {
     mongo.connect(dbUrl, function(err, db) {
         if (err) throw err
         
-        var collection = db.collection(collectionName)
-          collection.find().toArray(function(err, urls) {
-            if (err) throw err
+        loadUrl(db, null, null, function(urls) {
             res.send(urls);
-        })
+        });
+    });
+});
+router.get('/r/:id', function (req, res) {
+    var id = req.params.id;
+    mongo.connect(dbUrl, function(err, db) {
+        if (err) throw err
+        loadUrl(db, null, id, function(urls) {
+            if ( urls.length>0 ) {
+                var url = urls[0];
+            } else {
+                res.send({err: "Invalid ID!"});
+            }
+        });
     });
 });
 router.get('/', function (req, res) {
-    res.render('shorturl', {base: req.baseUrl});
+    mongo.connect(dbUrl, function(err, db) {
+        if (err) throw err
+        
+        loadUrl(db, null, null, function(urls) {
+            res.render('shorturl', {base: req.baseUrl, urls: urls});
+        });
+    });
 });
     
 module.exports = router;

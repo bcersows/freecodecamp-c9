@@ -11,4 +11,9 @@ html(lang="en")
     main
       h1 Welcome to bcersows's URL Shortener
       p To create a new short-url, open the link '#{base}/new/<em>URL to shorten</em>'. Shortened URLs can be used via '#{base}/r/<em>id</em>'.
-    
+      #urls
+        ul
+          each val in urls
+            li #{val.url} (id: #{val._id})
+          else
+            li There are no values
