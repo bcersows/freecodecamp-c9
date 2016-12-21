@@ -13,7 +13,7 @@ app.use("/timestamp", require('./timestamp/service_timestamp'));
 
 app.use('/whoami', require('./whoami/service_whoami'))
 
-app.use('/shorturl', require('./service_shorturl'))
+app.use('/shorturl', require('./shorturl/service_shorturl'))
 
 
 // Default

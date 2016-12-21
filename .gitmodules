@@ -4,3 +4,6 @@
 [submodule "whoami"]
 	path = whoami
 	url = ssh://git@github.com/bcersows/freecodecamp-whoami
+[submodule "shorturl"]
+	path = shorturl
+	url = ssh://git@github.com/bcersows/freecodecamp-urlshortener
