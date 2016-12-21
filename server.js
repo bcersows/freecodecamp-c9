@@ -15,6 +15,8 @@ app.use('/whoami', require('./whoami/service_whoami'))
 
 app.use('/shorturl', require('./shorturl/service_shorturl'))
 
+app.use('/imagesearch', require('./imagesearch/service_imagesearch'))
+
 
 // Default
 app.get("/|/about", function(req, res) {

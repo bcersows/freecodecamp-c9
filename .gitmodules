@@ -7,3 +7,6 @@
 [submodule "shorturl"]
 	path = shorturl
 	url = ssh://git@github.com/bcersows/freecodecamp-urlshortener
+[submodule "imagesearch"]
+	path = imagesearch
+	url = ssh://git@github.com/bcersows/freecodecamp-imagesearch
