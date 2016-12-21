@@ -10,7 +10,7 @@ html(lang="en")
   body
     main
       h1 Welcome to bcersows's URL Shortener
-      p To create a new short-url, open the link '#{base}/new/<em>URL to shorten</em>'. Shortened URLs can be used via '#{base}/r/<em>id</em>'.
+      p To create a new short-url, open the link '#{base}/new?p=<em>URL to shorten</em>'. Shortened URLs can be used via '#{base}/r/<em>id</em>'.
       #urls
         ul
           each val in urls
