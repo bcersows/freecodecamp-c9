@@ -4,7 +4,7 @@ var ObjectID = require('mongodb').ObjectID;
 var shortid = require('shortid');
 //require('pug');
 
-var dbUrl = 'mongodb://localhost:27017/urls';
+var dbUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/urls';
 var collectionName = "shorturl";
 var mongo = require('mongodb').MongoClient
 

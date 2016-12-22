@@ -3,7 +3,7 @@ var express = require('express')
 var imageSearch = require('node-google-image-search');
 //require('pug');
 
-var dbUrl = 'mongodb://localhost:27017/imagesearch';
+var dbUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/imagesearch';
 var collectionName = "imagesearch";
 var mongo = require('mongodb').MongoClient
 
