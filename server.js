@@ -17,12 +17,15 @@ app.use('/shorturl', require('./shorturl/service_shorturl'))
 
 app.use('/imagesearch', require('./imagesearch/service_imagesearch'))
 
+app.use('/filemetadata', require('./filemetadata/service_filemetadata'))
+
 
 // Default
 app.get("/|/about", function(req, res) {
     res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
-app.listen(process.env.PORT || 8080, function () {
-    console.log('Example app listening on port 8080!')
+var port = process.env.PORT || 8080;
+app.listen(port, function () {
+    console.log('Example app listening on port '+port+'!')
 })

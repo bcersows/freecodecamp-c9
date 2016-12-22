@@ -14,5 +14,8 @@ Path `/shorturl`: Gets a user-provided URL and creates a shortlink for it. Redir
 ## Image Search
 Path `/imagesearch`: Search (`./search`) for a search term on Google Images. Returns 10 results; can be paginated by using the query parameter `offset=x`. History of last searches under `./latest`.
 
+## File metadata
+Path `/filemetadata`: Upload a file and get its size in return.
+
 
 ** Due to the incompatilities of Cloud9, all services have to be in one GitHub repository. Sorry 'bout that! **

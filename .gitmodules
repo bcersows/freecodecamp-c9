@@ -10,3 +10,6 @@
 [submodule "imagesearch"]
 	path = imagesearch
 	url = ssh://git@github.com/bcersows/freecodecamp-imagesearch
+[submodule "filemetadata"]
+	path = filemetadata
+	url = ssh://git@github.com/bcersows/freecodecamp-filemetadata
