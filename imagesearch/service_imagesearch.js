@@ -50,7 +50,7 @@ router.get('/search/:search', function (req, res) {
 			console.log(result);
             ret.push({
                 url: result.link,
-                page: result.image.contextLink,
+                page: (result.image&&result.image.contextLink?result.image.contextLink:"none"),
                 alt: result.title
             });
         }
