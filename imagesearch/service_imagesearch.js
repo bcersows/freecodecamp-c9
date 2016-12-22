@@ -47,7 +47,6 @@ router.get('/search/:search', function (req, res) {
         var ret = [];
         for ( var i = 0; i<results.length; i++ ) {
             var result = results[i];
-			console.log(result);
             ret.push({
                 url: result.link,
                 page: (result.image&&result.image.contextLink?result.image.contextLink:"none"),
