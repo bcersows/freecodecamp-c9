@@ -15,3 +15,13 @@ app.listen(8080, function () {
 ```
 
 Add submodule: `git submodule add ssh://git@github.com/bcersows/freecodecamp-timestamp timestamp`
+
+## Convert submodules
+git checkout release
+git rm --cached filemetadata && rm -rf filemetadata/.git && git add filemetadata
+git rm --cached imagesearch && rm -rf imagesearch/.git && git add imagesearch
+git rm --cached timestamp && rm -rf timestamp/.git && git add timestamp
+git rm --cached urlshortener && rm -rf urlshortener/.git && git add urlshortener
+git rm --cached whoami && rm -rf whoami/.git && git add whoami
+git rm .gitmodules
+git commit -m "removed submodules"
