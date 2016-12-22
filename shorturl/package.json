@@ -1,0 +1,25 @@
+{
+  "name": "freecodecamp-urlshortener",
+  "version": "1.0.0",
+  "description": "Service URL Shortener.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bcersows/freecodecamp-urlshortener.git"
+  },
+  "author": "bcersows",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcersows/freecodecamp-urlshortener/issues"
+  },
+  "homepage": "https://github.com/bcersows/freecodecamp-urlshortener#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.16",
+    "pug": "^2.0.0-beta6",
+    "shortid": "^2.2.6"
+  }
+}

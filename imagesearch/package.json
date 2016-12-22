@@ -1,0 +1,25 @@
+{
+  "name": "freecodecamp-imagesearch",
+  "version": "1.0.0",
+  "description": "Head over to the [main repository](https://github.com/bcersows/freecodecamp-c9) for documentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bcersows/freecodecamp-imagesearch.git"
+  },
+  "author": "bcersows",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcersows/freecodecamp-imagesearch/issues"
+  },
+  "homepage": "https://github.com/bcersows/freecodecamp-imagesearch#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.16",
+    "node-google-image-search": "^1.0.2",
+    "pug": "^2.0.0-beta6"
+  }
+}
