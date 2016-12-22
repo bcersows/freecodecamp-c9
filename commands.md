@@ -25,3 +25,11 @@ git rm --cached shorturl && rm -rf shorturl/.git && git add shorturl
 git rm --cached whoami && rm -rf whoami/.git && git add whoami
 git rm .gitmodules
 git commit -m "removed submodules"
+
+
+
+git checkout release && mv filemetadata filemetadata-tmp && git submodule deinit filemetadata && git rm filemetadata && mv filemetadata-tmp filemetadata && git add filemetadata
+git checkout release && mv imagesearch imagesearch-tmp && git submodule deinit imagesearch && git rm imagesearch && mv imagesearch-tmp imagesearch && git add imagesearch
+git checkout release && mv timestamp timestamp-tmp && git submodule deinit timestamp && git rm timestamp && mv timestamp-tmp timestamp && git add timestamp
+git checkout release && mv shorturl shorturl-tmp && git submodule deinit shorturl && git rm shorturl && mv shorturl-tmp shorturl && git add shorturl
+git checkout release && mv whoami whoami-tmp && git submodule deinit whoami && git rm whoami && mv whoami-tmp whoami && git add whoami
